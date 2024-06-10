@@ -1,0 +1,663 @@
+<html data-bs-theme="dark">
+    <head>
+        <title>My Portfolio</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <style>
+        :root {
+    --pf-bg: #5F5449;
+    --pf-primary: #B09398;
+    --pf-secondry: #EBFCFB;
+    --pf-grid-bg: #D9D9D9;
+    --pf-inner-grid-bg: #B09398;
+    --pf-btn-color: #CEDFD9;
+}
+
+.pf-color-bg {
+    --bs-bg-opacity: 1;
+    background-color: var(--pf-bg, var(--bs-bg-opacity)) !important;
+}
+
+/* 
+
+    NAVBAR
+
+*/
+
+.navbar {
+    /*  The only reason to use absolute in here,
+        is because if we want to use 100vh for each
+        page class, then navbar is going to steal some
+        space from the top. Meaning, it doesn't go on top
+        of the div page, because it is not inside it.    
+    */
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 32px 0px 32px 0px;
+}
+
+.nav-link {
+    font-size: 16px;
+    font-family: "Libre Baskerville";
+}
+
+h1 {
+    font-family: "League Spartan";
+}
+
+.nav-item {
+    width: 172px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    padding: 0px;
+}
+
+.nav-item>a {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hr {
+    border-top: 2px solid #EBFCFB;
+}
+
+
+/*
+
+    BOOTSTRAP BUTTON OVERRIDES
+
+*/
+
+
+.btn-primary>.nav-link {
+    color: var(--pf-primary);
+}
+
+.btn-outline-primary>.nav-link {
+    color: var(--pf-secondry);
+}
+
+.btn-outline-primary>.nav-link:hover {
+    color: var(--pf-bg);
+}
+
+.btn-primary {
+    background-color: var(--pf-secondry);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--pf-secondry);
+    --bs-btn-border-color: var(--pf-secondry);
+    --bs-btn-hover-bg: var(--pf-secondry);
+    --bs-btn-hover-border-color: var(--pf-secondry);
+    --bs-btn-active-bg: var(--pf-secondry);
+    --bs-btn-active-border-color: var(--pf-secondry);
+    --bs-btn-disabled-bg: var(--pf-secondry);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--pf-secondry);
+    --bs-btn-border-color: var(--pf-secondry);
+    --bs-btn-hover-bg: var(--pf-secondry);
+    --bs-btn-hover-border-color: var(--pf-secondry);
+    --bs-btn-active-bg: var(--pf-secondry);
+    --bs-btn-active-border-color: var(--pf-secondry);
+    --bs-btn-disabled-color: var(--pf-secondry);
+    --bs-btn-disabled-border-color: var(--pf-secondry);
+    --bs-btn-bg: var(--pf-bg);
+}
+
+
+/*
+
+PAGE
+
+*/
+
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper>.page {
+    padding: 113px 60px 0px 60px;
+    display: flex;
+
+    flex-direction: column;
+
+    max-width: 1000px;
+    margin: auto;
+    height: 100vh;
+    /* If the headers sizing changes, or gets dynamic, the 113 pixels has to change. */
+
+}
+
+/*
+
+    CUSTOM SCROLL
+
+*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--pf-btn-color);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--pf-primary);
+    padding: 1px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--pf-inner-grid-bg);
+  }
+
+
+  /*
+
+  ABOUT ME
+
+  */
+
+  .h1 {
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+.h2 {
+    font-family: "Libre Baskerville";
+    ;
+}
+
+.img-overlay-wrap {
+    position: relative;
+
+    width: 50%;
+    /* This makes width and height equal */
+}
+
+.img-overlay-wrap .portrait {
+    position: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: #EBFCFB 1px solid;
+    z-index: 1;
+}
+
+.img-overlay-wrap .portrait-svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+
+    right: 0;
+    left: 33%;
+    z-index: 2;
+}
+
+.about-me-wrap {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 2 / 1;
+}
+
+.text-wrap {
+    width: 50%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    text-overflow: clip;
+    margin-left: 16px;
+}
+
+.text-wrap p {
+    text-overflow: clip;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .text-wrap p {
+        font-size: 1.5vw;
+    }
+}
+
+.name-bubble-wrap {
+    position: relative;
+}
+
+.i-am-message {
+    height: 3.5rem;
+}
+
+.text-wrap h1,
+.text-wrap .name-bubble-wrap,
+.name-bubble-wrap img {
+    display: inline;
+}
+
+.text-wrap h1 {
+    margin-right: 1rem;
+}
+
+.name-bubble-wrap {
+    position: relative;
+    z-index: 2;
+}
+
+.name-bubble-wrap img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    height: auto;
+    width: 120%;
+}
+
+.scroll-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.scroll-btn a {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20px;
+    height: 40px;
+}
+
+/*
+
+    MY PROJECTS
+
+    */
+
+    .box {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    background-color: var(--pf-grid-bg);
+    color: white;
+    justify-content: end;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    /* Adjust the height as needed */
+    flex-direction: column;
+    padding: 0px;
+}
+
+.inner-box {
+    background-color: var(--pf-inner-grid-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    transition: 0.25s;
+}
+
+.inner-box:hover {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+    padding: 30px 15px 30px 15px;
+
+    .box-description {
+        display: initial;
+    }
+}
+
+.box-title {
+    font-family: "Libre Baskerville";
+    font-weight: bold;
+}
+
+.box-description {
+    display: none;
+}
+
+/*
+
+    CONTACT ME
+
+*/
+
+.contact-form {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 2 / 1;
+    color: var(--pf-secondry);
+    /* Matching the light text color */
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+form {
+    width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--pf-secondry);
+    /* Matching the border color */
+    background-color: var(--pf-bg);
+    color: var(--pf-secondry);
+    /* Matching the input text color */
+    outline: none;
+    font-family: "Libre Baskerville";
+}
+
+
+.form-group input:hover,
+.form-group textarea:hover,
+textarea:hover,
+textarea:active {
+    border-radius: 0px !important;
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(206, 223, 217, 0.5);
+    /* Matching the placeholder color */
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.form-group>#name {
+    width: 100%;
+}
+
+.form-group>#email {
+    width: 100%;
+}
+
+button {
+    display: block;
+    color: var(--pf-primary);
+    width: 120px;
+    padding: 10px;
+    border: none;
+    background-color: var(--pf-btn-color);
+    /* Matching the button background color */
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #D1CCC7;
+    /* Slightly darker color for hover effect */
+}
+
+.form-basic-details {
+    display: flex;
+    width: 100%;
+}
+
+.form-basic-details>div:nth-of-type(1) {
+    margin-right: 15px;
+}
+
+.footer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: var(--pf-secondry);
+    font-family: "Libre Baskerville";
+}
+
+.footer>a:after {
+    content: '\00B7';
+    padding-right: 5px;
+}
+
+.footer>a.last:after {
+    content: '';
+}
+
+    </style>
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body class="pf-color-bg">
+        <div class="content-wrapper">
+            <nav class="navbar navbar-expand-sm sticky-top">
+                <div class="container-fluid d-flex justify-content-center p-0">
+                    <hr class="container-fluid hr">
+                    <ul class="navbar-nav">
+                        <li class="nav-item btn btn-primary mx-1">
+                            <a class="nav-link" href="#about-me">About Me</a>
+                        </li>
+                        <li class="nav-item btn btn-outline-primary mx-1">
+                            <a class="nav-link" href="#my-projects">My
+                                Projects</a>
+                        </li>
+                        <li class="nav-item btn btn-outline-primary mx-1">
+                            <a class="nav-link" href="#contact-me">Contact
+                                Me</a>
+                        </li>
+                    </ul>
+                    <hr class="container-fluid hr">
+                </div>
+            </nav>
+            <div class="page" id="about-me">
+                <h1 class="h1 text-center">Welcome To My Portfolio!</h1>
+                <div class="about-me-wrap d-flex">
+                    <div class="img-overlay-wrap">
+                        <img class="portrait" src="assets/portrait.webp">
+                        <img class="portrait-svg"
+                            src="assets/portrait-arrow.svg">
+                    </div>
+                    <div class="text-wrap">
+                        <div class="i-am-message">
+                            <h1 class="h2">I am</h1>
+                            <div class="name-bubble-wrap h2">
+                                <span class="name-bubble"
+                                    style="color: #B09398;">Łukasz</span>
+                                <img src="assets/name-bubble.svg">
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. <br>
+                            <br> Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat. <br>
+                            <br> Sed ut perspiciatis unde omnis iste natus error
+                            sit voluptatem accusantium doloremque laudantium,
+                            totam rem aperiam, eaque ipsa quae ab illo inventore
+                            veritatis et quasi architecto beatae vitae dicta
+                            sunt explicabo. <br>
+                            <br> Nemo enim ipsam voluptatem quia voluptas sit
+                            aspernatur aut odit aut fugit, sed quia consequuntur
+                            magni dolores eos qui ratione voluptatem sequi
+                            nesciunt.
+                        </p>
+                    </div>
+                </div>
+                <div class="scroll-btn d-flex">
+                    <a class="btn btn-outline-primary rounded-pill mx-1"
+                        href="#my-projects"></a>
+                </div>
+            </div>
+            <div class="page" id="my-projects">
+                <h1 class="h1 text-center">My Projects</h1>
+                <div class="my-projects-wrap d-flex">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="box">
+                                <div class="inner-box">
+                                    <span class="box-title">Project One</span>
+                                    <span class="box-description">Lorem ipsum
+                                        dolor sit amet, consectetur adipiscing
+                                        elit.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="box">
+                                <div class="inner-box">
+                                    <span class="box-title">Project Two</span>
+                                    <span class="box-description">Lorem ipsum
+                                        dolor sit amet, consectetur adipiscing
+                                        elit.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="box">
+                                <div class="inner-box">
+                                    <span class="box-title">Project Three</span>
+                                    <span class="box-description">Lorem ipsum
+                                        dolor sit amet, consectetur adipiscing
+                                        elit.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="box">
+                                <div class="inner-box">
+                                    <span class="box-title">Project Four</span>
+                                    <span class="box-description">Lorem ipsum
+                                        dolor sit amet, consectetur adipiscing
+                                        elit.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="box">
+                                <div class="inner-box">
+                                    <span class="box-title">Project Five</span>
+                                    <span class="box-description">Lorem ipsum
+                                        dolor sit amet, consectetur adipiscing
+                                        elit.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="box">
+                                <div class="inner-box">
+                                    <span class="box-title">Project Six</span>
+                                    <span class="box-description">Lorem ipsum
+                                        dolor sit amet, consectetur adipiscing
+                                        elit.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="box">
+                                <div class="inner-box">
+                                    <span class="box-title">Project Seven</span>
+                                    <span class="box-description">Lorem ipsum
+                                        dolor sit amet, consectetur adipiscing
+                                        elit.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="box">
+                                <div class="inner-box">
+                                    <span class="box-title">Project Eight</span>
+                                    <span class="box-description">Lorem ipsum
+                                        dolor sit amet, consectetur adipiscing
+                                        elit.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="contact-me">
+                <h1 class="h1 text-center">Contact Me</h1>
+                <div class="contact-form d-flex">
+                    <form>
+                        <div class="form-basic-details">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name"
+                                    placeholder="Name">
+                            </div>
+                            <div class="form-spacer"></div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email"
+                                    placeholder="Email *" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone"
+                                placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message"
+                                placeholder="Message... *" required></textarea>
+                        </div>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+                <div class="footer d-flex">
+                    <a href="#"> Email </a>
+                    <a href="#"> Discord </a>
+                    <a href="#"> Instagram </a>
+                    <a class="last" href="#"> Phone </a>
+                </div>
+            </div>
+        </body>
+    </html>

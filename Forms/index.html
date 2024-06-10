@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms Assignment</title>
+
+        <link rel="stylesheet" href="base.css">
+
+        <script>
+        const minAgeCalculator = () => {
+            let today = new Date();
+            let day = today.getDate();
+            let month = today.getMonth() + 1;
+            let year = today.getFullYear() - 18;
+            if(day < 10){
+                day = '0' + day;
+            } 
+            if(month < 10){
+                month = '0' + month;
+            } 
+
+            today = year + '-' + month + '-' + day;
+            document.getElementById("date_of_birth").setAttribute("max", today);
+        }
+
+        const passwordValidation = () => {
+            let passwordInput = document.getElementById("password");
+            let confirm = document.getElementById("confirm_password");
+
+            if (confirm.value === passwordInput.value) {
+                confirm.setCustomValidity('');
+            } else {
+                confirm.setCustomValidity('Passwords do not match');
+            }
+        }    
+        </script>
+    </head>
+    <body onload="minAgeCalculator();">
+        <div id="wrapper-form">
+            <div id="registeration-form">
+                <h1>Registeration Form</h1>
+                <form action method="post">
+                    <input type="text" name="username" id="username"
+                        minlength="5"
+                        required>
+                    <label for="username">Username</label><br>
+
+                    <input type="email" name="email" id="email" required>
+                    <label for="email">Email</label><br>
+
+                    <input type="password" name="password" id="password"
+                        minlength="8"
+                        onkeyup="passwordValidation();" required>
+                    <label for="password">Password</label><br>
+
+                    <input type="password" name="confirm_password"
+                        id="confirm_password"
+                        onkeyup="passwordValidation();" required>
+                    <label for="confirm_password">Confirm Password</label><br>
+
+                    <input type="date" name="date_of_birth" id="date_of_birth"
+                        required>
+                    <label for="date_of_birth">Date Of
+                        Birth</label><br>
+
+                    <input type="radio" id="gender" name="gender" value="Male">
+                    <label for="male">Male</label><br>
+
+                    <input type="radio" id="gender" name="gender"
+                        value="Female">
+                    <label for="female">Female</label><br>
+
+                    <input type="checkbox" id="tos" name="tos"" required>
+                    <label for="tos">Terms Of Service</label><br>
+
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

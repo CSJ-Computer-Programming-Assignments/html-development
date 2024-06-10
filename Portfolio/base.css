@@ -1,0 +1,165 @@
+:root {
+    --pf-bg: #5F5449;
+    --pf-primary: #B09398;
+    --pf-secondry: #EBFCFB;
+    --pf-grid-bg: #D9D9D9;
+    --pf-inner-grid-bg: #B09398;
+    --pf-btn-color: #CEDFD9;
+}
+
+.pf-color-bg {
+    --bs-bg-opacity: 1;
+    background-color: var(--pf-bg, var(--bs-bg-opacity)) !important;
+}
+
+/* 
+
+    NAVBAR
+
+*/
+
+.navbar {
+    /*  The only reason to use absolute in here,
+        is because if we want to use 100vh for each
+        page class, then navbar is going to steal some
+        space from the top. Meaning, it doesn't go on top
+        of the div page, because it is not inside it.    
+    */
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 32px 0px 32px 0px;
+}
+
+.nav-link {
+    font-size: 16px;
+    font-family: "Libre Baskerville";
+}
+
+h1 {
+    font-family: "League Spartan";
+}
+
+.nav-item {
+    width: 172px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    padding: 0px;
+}
+
+.nav-item>a {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hr {
+    border-top: 2px solid #EBFCFB;
+}
+
+
+/*
+
+    BOOTSTRAP BUTTON OVERRIDES
+
+*/
+
+
+.btn-primary>.nav-link {
+    color: var(--pf-primary);
+}
+
+.btn-outline-primary>.nav-link {
+    color: var(--pf-secondry);
+}
+
+.btn-outline-primary>.nav-link:hover {
+    color: var(--pf-bg);
+}
+
+.btn-primary {
+    background-color: var(--pf-secondry);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--pf-secondry);
+    --bs-btn-border-color: var(--pf-secondry);
+    --bs-btn-hover-bg: var(--pf-secondry);
+    --bs-btn-hover-border-color: var(--pf-secondry);
+    --bs-btn-active-bg: var(--pf-secondry);
+    --bs-btn-active-border-color: var(--pf-secondry);
+    --bs-btn-disabled-bg: var(--pf-secondry);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--pf-secondry);
+    --bs-btn-border-color: var(--pf-secondry);
+    --bs-btn-hover-bg: var(--pf-secondry);
+    --bs-btn-hover-border-color: var(--pf-secondry);
+    --bs-btn-active-bg: var(--pf-secondry);
+    --bs-btn-active-border-color: var(--pf-secondry);
+    --bs-btn-disabled-color: var(--pf-secondry);
+    --bs-btn-disabled-border-color: var(--pf-secondry);
+    --bs-btn-bg: var(--pf-bg);
+}
+
+
+/*
+
+PAGE
+
+*/
+
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper>.page {
+    padding: 113px 60px 0px 60px;
+    display: flex;
+
+    flex-direction: column;
+
+    max-width: 1000px;
+    margin: auto;
+    height: 100vh;
+    /* If the headers sizing changes, or gets dynamic, the 113 pixels has to change. */
+
+}
+
+/*
+
+    CUSTOM SCROLL
+
+*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--pf-btn-color);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--pf-primary);
+    padding: 1px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--pf-inner-grid-bg);
+  }

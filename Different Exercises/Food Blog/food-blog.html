@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Food Blog</title>
+        <link rel="stylesheet" href="food-blog.css">
+
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+    <body>
+        <header data-aos="fade-down">
+            <h1>Welcome to Tasty Delights</h1>
+        </header>
+        <main>
+            <div class="row row-first">
+                <section data-aos="fade-right" id="recipe">
+                    <h2>Today's Recipe</h2>
+                    <p>Today, I want to share with you a delicious recipe that I
+                        recently discovered. This Creamy
+                        Tomato Basil Pasta is a crowd-pleaser!</p>
+                    <div id="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li>300g pasta</li>
+                            <li>2 cups cherry tomatoes</li>
+                            <li>1 cup heavy cream</li>
+                            <!-- Add more ingredients as needed -->
+                        </ul>
+                    </div>
+                    <div id="instructions">
+                        <h3>Instructions</h3>
+                        <ol>
+                            <li>Cook pasta according to package instructions.</li>
+    
+                            <li>In a skillet, cook cherry tomatoes until they
+                                burst.</li>
+                            <li>Add heavy cream and cooked pasta to the skillet.
+                                Stir until well combined.</li>
+                            <!-- Add more instructions as needed -->
+                        </ol>
+                    </div>
+                </section>
+                <section data-aos="fade-right" data-aos-duration="1200" id="video-and-image">
+                    <h3>Video Demonstration</h3>
+                    <video controls>
+                        <source src="your-video-source.mp4" type="video/mp4">
+                        <!-- Add alternative text if video fails to load -->
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>Delicious Dish Image</h3>
+                    <img src="your-image-source.jpg"
+                        alt="Creamy Tomato Basil Pasta">
+                </section>
+            </div>
+            <div class="row row-second">
+                <section data-aos="fade-left" id="about-me">
+                    <h2>About Me</h2>
+                    <p>I'm a passionate food lover and chef, always on the lookout
+                        for exciting new recipes to
+                        share with you!</p>
+                </section>
+                <section data-aos="fade-left" data-aos-duration="1200" id="additional-content">
+                    <p>Thank you for trying out this recipe! Explore more delicious
+                        dishes on my blog and stay
+                        tuned for updates.</p>
+                </section>
+                <section data-aos="fade-left" data-aos-duration="1400" id="related-links">
+                    <h2>Related Links</h2>
+                    <ul>
+                        <li><a href="link1.html" target="_blank">Link 1</a></li>
+                        <li><a href="link2.html" target="_blank">Link 2</a></li>
+                        <li><a href="link3.html" target="_blank">Link 3</a></li>
+                        <!-- Add more links as needed -->
+                    </ul>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <section data-aos="fade-up" id="contact-information">
+                <h2>Contact Me</h2>
+                <p>Feel free to contact me at <a
+                        href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+            </section>
+        </footer>
+
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+          document.querySelector('html').classList.remove('no-js');
+          if (!window.Cypress) {
+            AOS.init({
+              duration: 1000, // values from 0 to 3000, with step 50ms
+            });
+          }
+        </script>
+    </body>
+</html>
